@@ -1,31 +1,26 @@
 import './App.css';
-import { motion } from "framer-motion"
+import { motion, useAnimation } from "framer-motion"
 
 function App() {
 
-  const variants = {
-    visiable: {
-      opacity: 1,
-      transition: {
-        duration: 2,
-      }
-    },
-    hidden: {
-      opacity: 0,
-    }
-  }
+  const controls = useAnimation()
 
   return (
     <div>
-      <motion.ul 
+      <motion.div 
       className="box" 
-      initial="hidden"
-      animate="visiable"
-      variants={variants}
-      >
-        <li style={{margin: 20, width: 20, height: 20, backgroundColor: 'black'}} />
-        <li style={{margin: 20, width: 20, height: 20, backgroundColor: 'black'}} />
-      </motion.ul>
+      animate={controls}
+      />
+
+      <button style={{marginTop:'200px'}} onClick={() => controls.start({
+        scale: 0.5,
+        x: 200,
+        transition: {
+          type: 'spring',
+          bounce: 0.7,
+        }
+      })}>Start</button>
+      <button style={{marginTop:'200px'}} onClick={() => controls.stop()}>Stop</button>
     </div>
   );
 }
