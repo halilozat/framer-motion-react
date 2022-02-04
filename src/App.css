@@ -1,20 +1,11 @@
-/* .container {
-    background-color: khaki;
-    width: 30rem;
-    height: 30rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
 .box {
     margin-top: 20rem;
     width: 20rem;
     height: 20rem;
-    background-color: red;
+    background-color: rgb(132, 14, 14);
     display: flex;
     justify-content: center;
     align-items: center;
-    list-style-type: none;
     flex-direction: row;
+    list-style-type: none;
 }
